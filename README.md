@@ -84,6 +84,7 @@ AsapCode_Platform/
 │
 ├── css/
 │   ├── style.css
+│   ├── integrantes.css
 │   └── menu-responsive.css
 │
 └── assets/
