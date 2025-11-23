@@ -66,12 +66,17 @@ AsapCode_Platform/
 │   ├── iam.html
 │   ├── rds.html
 │   ├── faq.html
+│   ├── history.html
 │   ├── contato.html
 │   ├── sobre.html
+│   ├── solution-01.html
+│   ├── solution-02.html
 │   └── integrantes.html
 │
 ├── js/
 │   ├── ec2.js
+│   ├── faq.js
+│   ├── integrantes.js
 │   ├── mock-resources.js
 │   ├── dashboard.js
 │   ├── history.js
@@ -82,15 +87,18 @@ AsapCode_Platform/
 │   └── menu-responsive.css
 │
 └── assets/
+│   └── team/
+│       ├── andrew.jpg
+│       ├── icaro.jpg
+│       ├── sergio.jpg
+│       └── members.json
 ```
 
-## 🖥️ 6. Prints e Imagens da Aplicação
-*(Inserir prints reais aqui)*
 
 ## 🔧 7. Como executar o projeto
 ### 1. Clonar:
 ```
-git clone https://github.com/<!-- TODO -->
+git clone https://github.com/sergiohsantos/global-solution-1TDSPS-2025-AsapCode.git
 ```
 
 ### 2. Executar frontend:
@@ -110,7 +118,7 @@ uvicorn main:app --reload --port 8000
 - Tela EC2 exibe atualização automática
 
 ## 📦 9. Link do GitHub  
-**Repositório Oficial:** <!-- TODO inserir link -->
+**Repositório Oficial:** https://github.com/sergiohsantos/global-solution-1TDSPS-2025-AsapCode
 
 ## 🏁 Status do Projeto
 ✔ 100% funcional  
