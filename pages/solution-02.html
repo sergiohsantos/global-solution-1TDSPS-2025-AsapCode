@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot AI · AsapCode Platform</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/menu-responsive.css" />
+
+</head>
+
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="../index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="../pages/ec2.html">EC2</a>
+        <a href="../pages/eks.html">EKS</a>
+        <a href="../pages/rds.html">RDS</a>
+        <a href="../pages/iam.html">IAM Roles</a>
+        <a href="../pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="../pages/history.html">History</a>
+    <a href="../pages/integrantes.html">Integrantes</a>
+    <a href="../pages/sobre.html">Sobre</a>
+    <a href="../pages/faq.html">FAQ</a>
+    <a href="../pages/contato.html">Contato</a>
+    <a href="../pages/solution-01.html">AsapCode CLI</a>
+    <a href="../pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>Chatbot AI</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+  <main class="main">
+
+    <!-- Card de conteúdo -->
+    <div class="card">
+      <h2>Chatbot AI · Visão Geral</h2>
+      <p style="font-size:13px;color:var(--muted);">
+        A Chatbot AI detalha como o frontend, o backend FastAPI, o Chatbot AI e a camada de integração com AWS EC2
+        se conectam para entregar uma experiência de IDP de Produção, com foco em escalabilidade
+        e possibilidade de expansão futura.
+      </p>
+      <p style="font-size:13px;color:var(--muted);">
+        O Chatbot AI atua como interface inteligente, guiando o usuário na criação e gerenciamento de recursos Cloud
+        via comandos em linguagem natural. Utilizando modelos avançados de NLP, o chatbot interpreta solicitações
+        e traduz em ações concretas no backend.
+      </p>
+      <p style="font-size:13px;color:var(--muted);">
+        O objetivo geral da AsapCode Platform + Chatbot AI é permitir que usuários, com diferentes níveis de
+        conhecimento em cloud, consigam criar ambientes de Desenvolvimento ou Produção na AWS Cloud de forma guiada e
+        segura, utilizando um Chatbot AI. Entre os objetivos específicos, destacam-se:<br>
+      <pre>
+    • Reduzir a barreira de entrada em computação em nuvem;<br>
+    • Automatizar o provisionamento de servidores EC2 e Recusos Cloud;<br>
+    • Oferecer um FAQ educacional sobre conceitos de cloud;<br>
+    • Integrar múltiplos canais e serviços (Watson, Node-RED, Telegram e AWS) em um fluxo único.
+    </pre>
+      </p>
+    </div>
+
+  </main>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>
