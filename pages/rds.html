@@ -6,7 +6,6 @@
   <title>RDS · AsapCode Platform</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/menu-responsive.css" />
-  
 </head>
 <body>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -16,7 +15,7 @@
     <div class="sidebar-section">
       <button class="sidebar-section-toggle" type="button">
         <span>Recursos AWS</span>
-        <span class="sidebar-section-arrow">▾</span>
+        <span class="sidebar-section-arrow"></span>
       </button>
       <div class="sidebar-submenu">
         <a href="../pages/ec2.html">EC2</a>
@@ -40,12 +39,11 @@
   </header>
     <!-- Área principal da página -->
 <main class="main">
-
 <!-- Card de conteúdo -->
 <div class="card">
   <h2>Instâncias RDS</h2>
   <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
-    Esta tela simula a criação de instâncias RDS para bancos relacionais usados pelas squads. 
+    Esta tela simula a criação de instâncias RDS para bancos relacionais usados pelas squads.
     As instâncias criadas aqui são mockadas, mas ajudam a contar a história de padronização de bancos via IDP.
   </p>
   <div class="row">
@@ -53,40 +51,33 @@
       <form action="" method="post">
       <label class="label" for="rdsName">Nome da instância</label>
       <input id="rdsName" class="input" placeholder="ex: asapcode-db-prod" required name="rdsName" />
-
       <label class="label" for="rdsEngine">Engine</label>
       <select id="rdsEngine" class="input">
         <option value="postgres">PostgreSQL</option>
         <option value="mysql">MySQL</option>
         <option value="aurora-mysql">Aurora MySQL</option>
       </select>
-
       <label class="label" for="rdsClass">Classe da instância</label>
       <select id="rdsClass" class="input">
         <option value="db.t3.micro">db.t3.micro</option>
         <option value="db.t3.small">db.t3.small</option>
         <option value="db.t3.medium">db.t3.medium</option>
       </select>
-
       <label class="label" for="rdsStorage">Storage (GB)</label>
       <input id="rdsStorage" class="input" type="number" min="20" placeholder="ex: 20" required name="rdsStorage" />
-
       <label class="label" for="rdsMultiAz">Multi-AZ</label>
       <div style="display:flex;align-items:center;gap:6px;">
         <input id="rdsMultiAz" type="checkbox" />
         <span style="font-size:12px;color:var(--muted);">Habilitar implantação Multi-AZ</span>
       </div>
-
       <label class="label" for="rdsEnv">Ambiente</label>
       <select id="rdsEnv" class="input">
         <option value="dev">Dev</option>
         <option value="hml">Homologação</option>
         <option value="prod">Produção</option>
       </select>
-
       <label class="label" for="rdsRegion">Região</label>
       <input id="rdsRegion" class="input" placeholder="ex: us-east-1" required name="rdsRegion" />
-
       <button class="btn" style="margin-top:12px;" onclick="asapcodeCreateRds()">Criar AWS RDS</button>
       </form>
       <div id="rdsMessage" style="margin-top:8px;font-size:12px;"></div>
@@ -108,7 +99,6 @@
     </div>
   </div>
 </div>
-
   </main>
   <script src="../js/mock-resources.js"></script>
   <script src="../js/menu.js"></script>

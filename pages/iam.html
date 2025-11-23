@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IAM Roles · AsapCode Platform</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/menu-responsive.css" />
-
 </head>
-
 <body>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <aside class="sidebar" id="sidebar">
@@ -18,7 +15,7 @@
     <div class="sidebar-section">
       <button class="sidebar-section-toggle" type="button">
         <span>Recursos AWS</span>
-        <span class="sidebar-section-arrow">▾</span>
+        <span class="sidebar-section-arrow"></span>
       </button>
       <div class="sidebar-submenu">
         <a href="../pages/ec2.html">EC2</a>
@@ -42,7 +39,6 @@
   </header>
   <!-- Área principal da página -->
 <main class="main">
-
     <!-- Card de conteúdo -->
 <div class="card">
       <h2>IAM Roles & Policie</h2>
@@ -55,16 +51,13 @@
           <form action="" method="post">
             <label class="label" for="iamName">Nome da IAM Role</label>
             <input id="iamName" class="input" placeholder="ex: asapcode-app-role" required name="iamName" />
-
             <label class="label" for="iamType">Tipo</label>
             <select id="iamType" class="input">
               <option value="role">Role</option>
               <option value="policy">Inline policy</option>
             </select>
-
             <label class="label" for="iamPrincipal">Serviço vinculado (principal)</label>
             <input id="iamPrincipal" class="input" placeholder="ex: ec2.amazonaws.com" required name="iamPrincipal" />
-
             <label class="label" for="iamPolicy">Policy (JSON)</label>
             <textarea id="iamPolicy" class="input" rows="6"
               placeholder='ex: { "Version": "2012-10-17", "Statement": [] }'></textarea>
@@ -91,10 +84,8 @@
         </div>
       </div>
     </div>
-
   </main>
   <script src="../js/mock-resources.js"></script>
   <script src="../js/menu.js"></script>
 </body>
-
 </html>
