@@ -2,16 +2,16 @@
 // Carrega tabela de EC2 consultando backend FastAPI (GET)
 // ==========================================================
 // Carrega dados de EC2 previamente provisionados do backend.
-async function asapcodeLoadEC2(){
-  const ids = JSON.parse(localStorage.getItem('asapcode_requests')||'[]');
+async function asapcodeLoadEC2() {
+  const ids = JSON.parse(localStorage.getItem('asapcode_requests') || '[]');
   const tbody = document.querySelector('#ec2Table tbody');
-  if(!tbody) return;
+  if (!tbody) return;
   tbody.innerHTML = '';
 
-  for(const id of ids){
-    try{
+  for (const id of ids) {
+    try {
       const res = await fetch(`http://localhost:8000/api/status/${id}`);
-      if(!res.ok) continue;
+      if (!res.ok) continue;
       const r = await res.json();
 
       tbody.innerHTML += `
@@ -23,7 +23,7 @@ async function asapcodeLoadEC2(){
           <td>${r.updated_at || '-'}</td>
         </tr>
       `;
-    }catch(e){
+    } catch (e) {
       console.error(e);
     }
   }
@@ -34,24 +34,23 @@ async function asapcodeLoadEC2(){
 // Adicionada validação HTML5 NATIVA antes de tudo
 // ==========================================================
 // Envia uma requisição ao backend para provisionar uma nova instância EC2.
-async function asapcodeProvisionEC2(){
+async function asapcodeProvisionEC2() {
 
   // ---------- VALIDAÇÃO HTML5 (NÃO ALTERA SUA LÓGICA) ----------
   const form = document.querySelector('#ec2Modal form');
   if (!form.checkValidity()) {
-      form.reportValidity();  // tooltip HTML5: “Preencha este campo”
-      return;                 // interrompe antes da provisão
+    form.reportValidity();  // tooltip HTML5: “Preencha este campo”
+    return;                 // interrompe antes da provisão
   }
   // --------------------------------------------------------------
 
-  // ---------- SE CHEGOU AQUI → É O SEU CÓDIGO ORIGINAL ----------
   const name = document.getElementById('ec2_name').value;
   const region = document.getElementById('ec2_region').value;
   const ami = document.getElementById('ec2_ami').value;
   const type = document.getElementById('ec2_type').value;
   const vpc = document.getElementById('ec2_vpc').value;
   const subnet = document.getElementById('ec2_subnet').value;
-  const sgs = document.getElementById('ec2_sg').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const sgs = document.getElementById('ec2_sg').value.split(',').map(s => s.trim()).filter(Boolean);
   const userData = document.getElementById('ec2_user_data')
     ? document.getElementById('ec2_user_data').value.trim()
     : '';
@@ -68,23 +67,23 @@ async function asapcodeProvisionEC2(){
     user_data: userData || null
   };
 
-  try{
+  try {
     const resp = await fetch('http://localhost:8000/api/provision/ec2', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
     const data = await resp.json();
 
-    let ids = JSON.parse(localStorage.getItem('asapcode_requests')||'[]');
+    let ids = JSON.parse(localStorage.getItem('asapcode_requests') || '[]');
     ids.push(data.request_id);
     localStorage.setItem('asapcode_requests', JSON.stringify(ids));
 
     closeEc2Modal();
     asapcodeLoadEC2();
 
-  }catch(e){
+  } catch (e) {
     console.error(e);
     alert('Erro ao provisionar EC2 (ver console).');
   }
@@ -94,18 +93,18 @@ async function asapcodeProvisionEC2(){
 // Abre modal
 // ==========================================================
 // Abre o modal de criação de EC2.
-function openEc2Modal(){
+function openEc2Modal() {
   const el = document.getElementById('ec2Modal');
-  if(el) el.classList.add('open');
+  if (el) el.classList.add('open');
 }
 
 // ==========================================================
 // Fecha modal
 // ==========================================================
 // Fecha o modal de criação de EC2.
-function closeEc2Modal(){
+function closeEc2Modal() {
   const el = document.getElementById('ec2Modal');
-  if(el) el.classList.remove('open');
+  if (el) el.classList.remove('open');
 }
 
 // ==========================================================
