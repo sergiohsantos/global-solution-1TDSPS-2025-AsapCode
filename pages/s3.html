@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>S3 · AsapCode Platform</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/menu-responsive.css" />
-
 </head>
-
 <body>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <aside class="sidebar" id="sidebar">
@@ -18,7 +15,7 @@
     <div class="sidebar-section">
       <button class="sidebar-section-toggle" type="button">
         <span>Recursos AWS</span>
-        <span class="sidebar-section-arrow">▾</span>
+        <span class="sidebar-section-arrow"></span>
       </button>
       <div class="sidebar-submenu">
         <a href="../pages/ec2.html">EC2</a>
@@ -41,10 +38,9 @@
     <div><span class="badge">AsapCode Platform</span></div>
   </header>
   <!-- Área principal da página -->
-<main class="main">
-
+  <main class="main">
     <!-- Card de conteúdo -->
-<div class="card">
+    <div class="card">
       <h2>Buckets S3</h2>
       <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
         Esta tela simula a criação de buckets S3 que seriam usados para assets, logs ou artefatos de build.
@@ -56,30 +52,25 @@
           <form action="" method="post">
             <label class="label" for="s3Name">Nome do bucket</label>
             <input id="s3Name" class="input" placeholder="ex: asapcode-assets" required name="s3Name" />
-
             <label class="label" for="s3Region">Região</label>
             <input id="s3Region" class="input" placeholder="ex: us-east-1" required name="s3Region" />
-
             <label class="label" for="s3Type">Tipo de bucket</label>
             <select id="s3Type" class="input">
               <option value="padrao">Padrão</option>
               <option value="logs">Logs</option>
               <option value="assets">Assets estáticos</option>
             </select>
-
             <label class="label" for="s3Versioning">Versionamento</label>
             <div style="display:flex;align-items:center;gap:6px;">
               <input id="s3Versioning" type="checkbox" />
               <span style="font-size:12px;color:var(--muted);">Habilitar versionamento de objetos</span>
             </div>
-
             <label class="label" for="s3Encryption">Criptografia</label>
             <select id="s3Encryption" class="input">
               <option value="none">Sem criptografia</option>
               <option value="sse-s3">SSE-S3 (gerenciada pela AWS)</option>
               <option value="sse-kms">SSE-KMS (chave gerenciada)</option>
             </select>
-
             <button class="btn" style="margin-top:12px;" onclick="asapcodeCreateS3()">Criar AWS Bucket S3</button>
           </form>
           <div id="s3Message" style="margin-top:8px;font-size:12px;"></div>
@@ -101,10 +92,8 @@
         </div>
       </div>
     </div>
-
   </main>
   <script src="../js/mock-resources.js"></script>
   <script src="../js/menu.js"></script>
 </body>
-
 </html>
