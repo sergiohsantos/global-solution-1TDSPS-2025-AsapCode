@@ -1,0 +1,20 @@
+[
+  {
+    "type": "S3",
+    "name": "asapcode-artifacts-dev",
+    "ip": "s3://asapcode-artifacts-dev",
+    "status": "AVAILABLE",
+    "request_id": "mock-s3-001",
+    "env": "dev",
+    "region": "us-east-1"
+  },
+  {
+    "type": "S3",
+    "name": "asapcode-artifacts-prod",
+    "ip": "s3://asapcode-artifacts-prod",
+    "status": "AVAILABLE",
+    "request_id": "mock-s3-002",
+    "env": "prod",
+    "region": "us-east-1"
+  }
+]

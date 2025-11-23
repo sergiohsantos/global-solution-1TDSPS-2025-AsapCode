@@ -1,0 +1,20 @@
+[
+  {
+    "type": "EKS",
+    "name": "eks-asap-dev",
+    "ip": "10.10.1.10",
+    "status": "ACTIVE",
+    "request_id": "mock-eks-001",
+    "env": "dev",
+    "region": "us-east-1"
+  },
+  {
+    "type": "EKS",
+    "name": "eks-asap-prod",
+    "ip": "10.10.2.10",
+    "status": "ACTIVE",
+    "request_id": "mock-eks-002",
+    "env": "prod",
+    "region": "us-east-1"
+  }
+]

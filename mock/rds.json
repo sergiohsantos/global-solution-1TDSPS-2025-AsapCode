@@ -1,0 +1,22 @@
+[
+  {
+    "type": "RDS",
+    "name": "asapcode-db-dev",
+    "ip": "10.20.1.15",
+    "status": "AVAILABLE",
+    "request_id": "mock-rds-001",
+    "env": "dev",
+    "engine": "postgres",
+    "region": "us-east-1"
+  },
+  {
+    "type": "RDS",
+    "name": "asapcode-db-prod",
+    "ip": "10.20.2.15",
+    "status": "AVAILABLE",
+    "request_id": "mock-rds-002",
+    "env": "prod",
+    "engine": "postgres",
+    "region": "us-east-1"
+  }
+]

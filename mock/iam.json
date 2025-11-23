@@ -1,0 +1,20 @@
+[
+  {
+    "type": "IAM",
+    "name": "AsapCode-EC2-ProvisionerRole",
+    "ip": "-",
+    "status": "ATTACHED",
+    "request_id": "mock-iam-001",
+    "env": "shared",
+    "principal": "ec2.amazonaws.com"
+  },
+  {
+    "type": "IAM",
+    "name": "AsapCode-DeveloperPortalRole",
+    "ip": "-",
+    "status": "ATTACHED",
+    "request_id": "mock-iam-002",
+    "env": "shared",
+    "principal": "apigateway.amazonaws.com"
+  }
+]
