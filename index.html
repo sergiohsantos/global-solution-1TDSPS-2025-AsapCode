@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · AsapCode Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/menu-responsive.css" />
+  
+</head>
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="pages/ec2.html">EC2</a>
+        <a href="pages/eks.html">EKS</a>
+        <a href="pages/rds.html">RDS</a>
+        <a href="pages/iam.html">IAM Roles</a>
+        <a href="pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="pages/history.html">History</a>
+    <a href="pages/integrantes.html">Integrantes</a>
+    <a href="pages/sobre.html">Sobre</a>
+    <a href="pages/faq.html">FAQ</a>
+    <a href="pages/contato.html">Contato</a>
+    <a href="pages/solution-01.html">AsapCode CLI</a>
+    <a href="pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>Dashboard</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+<main class="main">
+
+  <section class="hero">
+    <div class="hero-text">
+      <span class="badge">Global Solution 2025 · IDP para o futuro do trabalho</span>
+      <h1>AsapCode Platform: portal único para provisionar infra e acelerar squads.</h1>
+      <p>
+        A AsapCode Platform centraliza o provisionamento de recursos na AWS usando Frontend, Chatbot
+        e CLI conectados ao mesmo backend em FastAPI e Python. É um protótipo real de um
+        Developer Portal moderno.
+      </p>
+      <div class="hero-actions">
+        <button class="btn" onclick="window.location.href='pages/ec2.html'">
+          Provisionar EC2 real
+        </button>
+        <button class="btn btn-outline" onclick="window.location.href='pages/solution-01.html'">
+          Ver solução completa
+        </button>
+      </div>
+      <ul class="hero-highlights">
+        <li>Experiência unificada: Frontend, Chatbot Watson e CLI falando com a mesma API.</li>
+        <li>Provisionamento real de instâncias EC2 com acompanhamento de status e IP público.</li>
+        <li>Visão pensada para um IDP corporativo alinhado ao desafio da Global Solution 2025.</li>
+      </ul>
+    </div>
+    <div class="hero-panel">
+      <div class="card hero-card">
+        <h2>Como a plataforma funciona</h2>
+        <p class="hero-caption">
+          Em três passos simples, o desenvolvedor solicita recursos de forma segura e guiada.
+        </p>
+        <ol class="hero-steps">
+          <li><strong>Solicitação:</strong> o usuário escolhe o recurso (EC2, EKS, RDS, IAM, S3).</li>
+          <li><strong>Orquestração:</strong> o backend registra o pedido e dispara o provisionamento.</li>
+          <li><strong>Acompanhamento:</strong> a AsapCode exibe o status em tempo real e o IP público.</li>
+        </ol>
+        <p class="hero-footnote">
+          A EC2 é provisionada de forma real via AWS SDK. Os demais recursos simulam o catálogo
+          completo de um IDP moderno.
+        </p>
+      </div>
+    </div>
+  
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Visão geral de recursos</h2>
+      <p class="section-subtitle">Resumo centralizado dos recursos reais (EC2) e mockados (EKS, IAM, S3, RDS).</p>
+    </div>
+
+    <div class="row">
+      <div class="col-33">
+        <div class="card metric-card">
+          <div class="metric-label">Total de recursos</div>
+          <div class="metric-value" id="metricTotal">0</div>
+          <div class="metric-hint">EC2 + mocks</div>
+        </div>
+      </div>
+      <div class="col-33">
+        <div class="card metric-card">
+          <div class="metric-label">AWS EC2</div>
+          <div class="metric-value" id="metricEc2">0</div>
+          <div class="metric-hint">Consultando FastAPI</div>
+        </div>
+      </div>
+      <div class="col-33">
+        <div class="card metric-card">
+          <div class="metric-label">Recursos mockados</div>
+          <div class="metric-value" id="metricMock">0</div>
+          <div class="metric-hint">EKS · IAM · S3 · RDS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card de conteúdo -->
+<div class="card" style="margin-top:20px; overflow:auto;">
+      <h3 style="margin-top:0;">Catálogo central de recursos</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">
+        Esta visão agrega recursos reais e simulados da AsapCode Platform. A coluna <strong>Origem</strong> indica se
+        o dado veio do backend FastAPI (EC2) ou de um catálogo mockado local.
+      </p>
+      <table class="table" id="resourceTable">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>IP / Endpoint</th>
+            <th>Status</th>
+            <th>Request ID</th>
+            <th>Origem</th>
+          </tr>
+        </thead>
+        <tbody id="resourceTableBody">
+          <tr>
+            <td colspan="6">Carregando recursos...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+<div class="row">
+  <div class="col-33">
+    <!-- Card de conteúdo -->
+<div class="card">
+      <h3>Provisionamento EC2</h3>
+      <p>Criação real de instâncias EC2 via AWS SDK, com rastreio de status e IP público.</p>
+      <button class="btn" onclick="window.location.href='pages/ec2.html'">Abrir EC2</button>
+    </div>
+</main>
+  <script src="js/mock-resources.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

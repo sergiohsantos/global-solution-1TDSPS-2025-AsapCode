@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ · AsapCode Platform</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/menu-responsive.css" />
+  
+</head>
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="../index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="../pages/ec2.html">EC2</a>
+        <a href="../pages/eks.html">EKS</a>
+        <a href="../pages/rds.html">RDS</a>
+        <a href="../pages/iam.html">IAM Roles</a>
+        <a href="../pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="../pages/history.html">History</a>
+    <a href="../pages/integrantes.html">Integrantes</a>
+    <a href="../pages/sobre.html">Sobre</a>
+    <a href="../pages/faq.html">FAQ</a>
+    <a href="../pages/contato.html">Contato</a>
+    <a href="../pages/solution-01.html">AsapCode CLI</a>
+    <a href="../pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>FAQ</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+<main class="main">
+    
+<!-- Card de conteúdo -->
+<div class="card">
+  <h2>FAQ · AsapCode Platform</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">
+      <span>Como eu provisiono uma instância EC2 real?</span><span>+</span>
+    </div>
+    <div class="faq-a">
+      Acesse o menu EC2, clique em &ldquo;Criar instância&rdquo;, preencha os campos obrigatórios
+      (nome, região, AMI, tipo, VPC, subnet e security groups) e confirme.
+      O backend FastAPI chama a AWS e a tabela é atualizada via API de status.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">
+      <span>Quais recursos são realmente criados em nuvem?</span><span>+</span>
+    </div>
+    <div class="faq-a">
+      Apenas EC2 é provisionado de forma real nesta versão. EKS, RDS, IAM e S3 são simulados,
+      mas seguem o mesmo padrão de UX, facilitando a evolução futura da plataforma.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">
+      <span>Preciso de servidor para usar o frontend?</span><span>+</span>
+    </div>
+    <div class="faq-a">
+      O frontend foi construído para funcionar via <code>file://</code>. Para o fluxo completo de EC2,
+      é necessário apenas subir o backend FastAPI localmente em <code>http://localhost:8000</code>.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">
+      <span>O que a AsapCode resolve no contexto do Futuro do Trabalho?</span><span>+</span>
+    </div>
+    <div class="faq-a">
+      A plataforma reduz fricção em tarefas de infraestrutura, libera o time para atividades de maior valor
+      e serve como ambiente de prática e requalificação contínua em cloud, automação e boas práticas.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">
+      <span>Posso adaptar a plataforma para outros provedores?</span><span>+</span>
+    </div>
+    <div class="faq-a">
+      Sim. O design do frontend e o contrato da API foram pensados para serem facilmente estendidos
+      a outros provedores de nuvem, mantendo a experiência de IDP única para o usuário.
+    </div>
+  </div>
+</div>
+<script src="../js/faq.js"></script>
+
+  </main>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

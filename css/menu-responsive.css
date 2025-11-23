@@ -1,0 +1,67 @@
+/* =============================
+   MENU HAMBÚRGUER RESPONSIVO
+   AsapCode Platform
+   ============================= */
+
+/* Estilo base */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  color: var(--text);
+  background: rgba(0,0,0,0.75);
+  padding: 6px 12px;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+}
+
+/* Sidebar — comportamento padrão */
+.sidebar {
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(15,23,42,0.93);
+  overflow-y: auto;
+  transition: transform .25s ease-in-out;
+  z-index: 8000;
+  transform: translateX(0);
+}
+
+/* =============================
+   MOBILE / TABLET
+   ============================= */
+@media (max-width: 820px) {
+
+  /* EXIBE o hambúrguer */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* Sidebar começa fechada */
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  /* Quando aberta */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Ajusta topbar */
+  .topbar {
+    padding-left: 60px !important;
+  }
+
+  /* Conteúdo NÃO some no mobile */
+  .main {
+    margin-left: 0 !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}

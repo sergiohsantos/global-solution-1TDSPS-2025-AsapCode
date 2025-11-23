@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sérgio Henrique",
+    "rm": "567254",
+    "turma": "1TDSPS-2025",
+    "photo": "sergio.jpg",
+    "linkedin": "https://www.linkedin.com/in/sergiohenriquessantos/",
+    "github": "https://github.com/sergiohsantos"
+  },
+  {
+    "name": "Andrew Henrique",
+    "rm": "568405",
+    "turma": "1TDSPS-2025",
+    "photo": "andrew.jpg",
+    "linkedin": "https://www.linkedin.com/in/andrew-henrique-89397a251/",
+    "github": "https://github.com/AHKSouza"
+  },
+  {
+    "name": "Icaro Nascimento",
+    "rm": "567386",
+    "turma": "1TDSPS-2025",
+    "photo": "icaro.jpg",
+    "linkedin": "https://www.linkedin.com/in/icaronascimento-/",
+    "github": "https://github.com/IcaroNscS"
+  }
+]

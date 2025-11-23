@@ -1,0 +1,75 @@
+/* ================================
+   AsapCode Platform · Integrantes
+   ================================ */
+
+/* Grid de integrantes */
+#team-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+/* Card individual */
+.team-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* Hover */
+.team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* Foto */
+.team-card img {
+    width: 96px;
+    height: 96px;
+    border-radius: 999px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    transition: border-color 160ms ease;
+}
+
+.team-card:hover img {
+    border-color: var(--accent);
+}
+
+/* Nome */
+.team-card h3 {
+    margin: 4px 0 2px;
+    font-size: 16px;
+}
+
+/* RM / Turma */
+.team-card .muted {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Links */
+.team-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.team-links a {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 160ms ease, opacity 160ms ease;
+}
+
+.team-links a:hover {
+    opacity: 0.9;
+    color: var(--accent2);
+}
