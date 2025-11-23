@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/menu-responsive.css" />
 </head>
+
 <body>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <aside class="sidebar" id="sidebar">
@@ -104,15 +106,16 @@
           <textarea class="input" id="ec2_user_data" rows="4" placeholder="#!/bin/bash
 yum update -y
 echo 'AsapCode provisionando...' > /tmp/asapcode.log"></textarea>
+          <div class="modal-actions">
+            <button class="btn btn-outline" type="button" onclick="closeEc2Modal()">Cancelar</button>
+            <button class="btn" type="button" onclick="asapcodeProvisionEC2()">Provisionar</button>
+          </div>
         </form>
-        <div class="modal-actions">
-          <button class="btn btn-outline" type="button" onclick="closeEc2Modal()">Cancelar</button>
-          <button class="btn" type="button" onclick="asapcodeProvisionEC2()">Provisionar</button>
-        </div>
       </div>
     </div>
     <script src="../js/ec2.js"></script>
   </main>
   <script src="../js/menu.js"></script>
 </body>
+
 </html>

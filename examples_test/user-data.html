@@ -1,0 +1,47 @@
+#!/bin/bash
+# Atualiza pacotes
+dnf update -y
+# Instala Apache
+dnf install -y httpd
+# Habilita e inicia o serviço
+systemctl enable httpd
+systemctl start httpd
+# Cria página HTML
+cat << 'EOF' > /var/www/html/index.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>AsapCode Platform - WebServer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #eee;
+            text-align: center;
+            padding-top: 60px;
+        }
+        h1 { color: #00b4d8; font-size: 42px; }
+        p  { color: #ccc; font-size: 20px; }
+        .box {
+            margin: auto;
+            margin-top: 40px;
+            width: 50%;
+            padding: 25px;
+            border-radius: 12px;
+            background: #161b22;
+            border: 1px solid #30363d;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Instância EC2 criada com sucesso!</h1>
+    <div class="box">
+        <p>Este WebServer foi provisionado automaticamente pela <strong>AsapCode Platform</strong>.</p>
+        <p>Através da API, CLI ou Frontend, toda a infraestrutura foi criada de forma automatizada.</p>
+        <p>🔥 Infra as Code + Python + AWS = Sucesso!</p>
+    </div>
+</body>
+</html>
+EOF
+chown apache:apache /var/www/html/index.html
