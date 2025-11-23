@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S3 · AsapCode Platform</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/menu-responsive.css" />
+
+</head>
+
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="../index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="../pages/ec2.html">EC2</a>
+        <a href="../pages/eks.html">EKS</a>
+        <a href="../pages/rds.html">RDS</a>
+        <a href="../pages/iam.html">IAM Roles</a>
+        <a href="../pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="../pages/history.html">History</a>
+    <a href="../pages/integrantes.html">Integrantes</a>
+    <a href="../pages/sobre.html">Sobre</a>
+    <a href="../pages/faq.html">FAQ</a>
+    <a href="../pages/contato.html">Contato</a>
+    <a href="../pages/solution-01.html">AsapCode CLI</a>
+    <a href="../pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>S3</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+<main class="main">
+
+    <!-- Card de conteúdo -->
+<div class="card">
+      <h2>Buckets S3</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Esta tela simula a criação de buckets S3 que seriam usados para assets, logs ou artefatos de build.
+        Os buckets criados aqui são apenas mockados, mas passam a aparecer no Dashboard central para contar a história
+        de centralização de provisionamento pelo IDP.
+      </p>
+      <div class="row">
+        <div class="col-50">
+          <form action="" method="post">
+            <label class="label" for="s3Name">Nome do bucket</label>
+            <input id="s3Name" class="input" placeholder="ex: asapcode-assets" required name="s3Name" />
+
+            <label class="label" for="s3Region">Região</label>
+            <input id="s3Region" class="input" placeholder="ex: us-east-1" required name="s3Region" />
+
+            <label class="label" for="s3Type">Tipo de bucket</label>
+            <select id="s3Type" class="input">
+              <option value="padrao">Padrão</option>
+              <option value="logs">Logs</option>
+              <option value="assets">Assets estáticos</option>
+            </select>
+
+            <label class="label" for="s3Versioning">Versionamento</label>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <input id="s3Versioning" type="checkbox" />
+              <span style="font-size:12px;color:var(--muted);">Habilitar versionamento de objetos</span>
+            </div>
+
+            <label class="label" for="s3Encryption">Criptografia</label>
+            <select id="s3Encryption" class="input">
+              <option value="none">Sem criptografia</option>
+              <option value="sse-s3">SSE-S3 (gerenciada pela AWS)</option>
+              <option value="sse-kms">SSE-KMS (chave gerenciada)</option>
+            </select>
+
+            <button class="btn" style="margin-top:12px;" onclick="asapcodeCreateS3()">Criar AWS Bucket S3</button>
+          </form>
+          <div id="s3Message" style="margin-top:8px;font-size:12px;"></div>
+        </div>
+        <div class="col-50">
+          <p style="font-size:13px;color:var(--muted);">
+            Em um cenário real, a criação de buckets pode seguir padrões rígidos de naming convention,
+            políticas de retenção de logs, criptografia obrigatória e integração com ferramentas de segurança.
+          </p>
+          <ul style="font-size:12px;color:var(--muted);padding-left:18px;">
+            <li>Separar buckets de <strong>logs</strong> dos buckets de <strong>assets</strong>.</li>
+            <li>Versionamento é útil para trilhas de auditoria e recuperação de arquivos.</li>
+            <li>Criptografia gerenciada (SSE-S3 ou SSE-KMS) é padrão em ambientes corporativos.</li>
+          </ul>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;">
+            Ao criar um bucket mockado, o Dashboard exibe o endpoint no formato <strong>s3://nome-do-bucket</strong>,
+            reforçando a visão de catálogo de recursos do IDP.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="../js/mock-resources.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>
