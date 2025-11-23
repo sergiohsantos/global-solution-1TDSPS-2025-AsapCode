@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKS · AsapCode Platform</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/menu-responsive.css" />
+
+</head>
+
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="../index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="../pages/ec2.html">EC2</a>
+        <a href="../pages/eks.html">EKS</a>
+        <a href="../pages/rds.html">RDS</a>
+        <a href="../pages/iam.html">IAM Roles</a>
+        <a href="../pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="../pages/history.html">History</a>
+    <a href="../pages/integrantes.html">Integrantes</a>
+    <a href="../pages/sobre.html">Sobre</a>
+    <a href="../pages/faq.html">FAQ</a>
+    <a href="../pages/contato.html">Contato</a>
+    <a href="../pages/solution-01.html">AsapCode CLI</a>
+    <a href="../pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>EKS</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+  <main class="main">
+
+    <!-- Card de conteúdo -->
+    <div class="card">
+      <h2>Clusters EKS</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Esta tela simula o formulário de criação de um cluster EKS semelhante ao console da AWS.
+        Os dados não vão para a nuvem, mas são armazenados localmente no navegador e aparecem no Dashboard central
+        como se fossem recursos reais do catálogo do IDP.
+      </p>
+      <div class="row">
+        <div class="col-50">
+          <form action="" method="post">
+            <label class="label" for="eksName">Nome do cluster</label>
+            <input id="eksName" class="input" placeholder="ex: asapcode-eks-prod" required name="eksName" />
+
+            <label class="label" for="eksRegion">Região</label>
+            <input id="eksRegion" class="input" placeholder="ex: us-east-1" required name="eksRegion" />
+
+            <label class="label" for="eksEnv">Ambiente</label>
+            <select id="eksEnv" class="input">
+              <option value="dev">Dev</option>
+              <option value="hml">Homologação</option>
+              <option value="prod">Produção</option>
+            </select>
+
+            <label class="label" for="eksVersion">Versão do Kubernetes</label>
+            <input id="eksVersion" class="input" placeholder="ex: 1.29" required name="eksVersion" />
+
+            <label class="label" for="eksNodeType">Tipo de node group</label>
+            <select id="eksNodeType" class="input">
+              <option value="managed">Managed node group</option>
+              <option value="self-managed">Self-managed</option>
+            </select>
+
+            <label class="label" for="eksNodes">Quantidade de nós</label>
+            <input id="eksNodes" class="input" type="number" min="1" placeholder="ex: 3" required name="eksNodes" />
+
+            <label class="label" for="eksCidr">CIDR do cluster</label>
+            <input id="eksCidr" class="input" placeholder="ex: 10.0.0.0/16" required name="eksCidr" />
+
+            <button class="btn" type="button" style="margin-top:12px;" onclick="asapcodeCreateEks()">
+              Criar Cluster AWS EKS
+            </button>
+
+          </form>
+          <div id="eksMessage" style="margin-top:8px;font-size:12px;"></div>
+        </div>
+        <div class="col-50">
+          <p style="font-size:13px;color:var(--muted);">
+            Com este formulário, a AsapCode Platform demonstra como seria o fluxo de provisionamento de um cluster EKS
+            diretamente pelo Developer Portal. No projeto real, esta tela poderia acionar pipelines de automação
+            (Terraform,
+            CloudFormation, CDK, etc.) ou workflows internos.
+          </p>
+          <ul style="font-size:12px;color:var(--muted);padding-left:18px;">
+            <li>Nome, ambiente e região ajudam a padronizar a nomenclatura multi-conta.</li>
+            <li>A versão do Kubernetes garante alinhamento com o roadmap de upgrades.</li>
+            <li>Node groups gerenciados reduzem o esforço de operação para o time de SRE.</li>
+            <li>O CIDR define o espaço de endereçamento para serviços internos e integrações.</li>
+          </ul>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;">
+            Após clicar em <strong>Criar AWS EKS Cluster</strong>, o recurso é gravado localmente e passa a
+            aparecer
+            no Dashboard central com o tipo <strong>EKS</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="../js/mock-resources.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>
