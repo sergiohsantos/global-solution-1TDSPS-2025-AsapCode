@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IAM Roles · AsapCode Platform</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/menu-responsive.css" />
+
+</head>
+
+<body>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>AsapCode</h2>
+    <a href="../index.html">Dashboard</a>
+    <div class="sidebar-section">
+      <button class="sidebar-section-toggle" type="button">
+        <span>Recursos AWS</span>
+        <span class="sidebar-section-arrow">▾</span>
+      </button>
+      <div class="sidebar-submenu">
+        <a href="../pages/ec2.html">EC2</a>
+        <a href="../pages/eks.html">EKS</a>
+        <a href="../pages/rds.html">RDS</a>
+        <a href="../pages/iam.html">IAM Roles</a>
+        <a href="../pages/s3.html">S3</a>
+      </div>
+    </div>
+    <a href="../pages/history.html">History</a>
+    <a href="../pages/integrantes.html">Integrantes</a>
+    <a href="../pages/sobre.html">Sobre</a>
+    <a href="../pages/faq.html">FAQ</a>
+    <a href="../pages/contato.html">Contato</a>
+    <a href="../pages/solution-01.html">AsapCode CLI</a>
+    <a href="../pages/solution-02.html">Chatbot AI</a>
+  </aside>
+  <header class="topbar">
+    <div>IAM Roles</div>
+    <div><span class="badge">AsapCode Platform</span></div>
+  </header>
+  <!-- Área principal da página -->
+<main class="main">
+
+    <!-- Card de conteúdo -->
+<div class="card">
+      <h2>IAM Roles & Policie</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Esta tela simula a criação de roles e policies IAM, permitindo demonstrar como a AsapCode Platform pode
+        padronizar permissões e reduzir risco de segurança via catálogo de acessos.
+      </p>
+      <div class="row">
+        <div class="col-50">
+          <form action="" method="post">
+            <label class="label" for="iamName">Nome da IAM Role</label>
+            <input id="iamName" class="input" placeholder="ex: asapcode-app-role" required name="iamName" />
+
+            <label class="label" for="iamType">Tipo</label>
+            <select id="iamType" class="input">
+              <option value="role">Role</option>
+              <option value="policy">Inline policy</option>
+            </select>
+
+            <label class="label" for="iamPrincipal">Serviço vinculado (principal)</label>
+            <input id="iamPrincipal" class="input" placeholder="ex: ec2.amazonaws.com" required name="iamPrincipal" />
+
+            <label class="label" for="iamPolicy">Policy (JSON)</label>
+            <textarea id="iamPolicy" class="input" rows="6"
+              placeholder='ex: { "Version": "2012-10-17", "Statement": [] }'></textarea>
+
+            <button class="btn" style="margin-top:12px;" onclick="asapcodeCreateIam()">Criar AWS IAM Role</button>
+          </form>
+          <div id="iamMessage" style="margin-top:8px;font-size:12px;"></div>
+        </div>
+        <div class="col-50">
+          <p style="font-size:13px;color:var(--muted);">
+            No ambiente real, o Developer Portal poderia aplicar guardrails, restringindo quais policies um squad pode
+            solicitar
+            e exigindo aprovação de segurança para perfis mais sensíveis.
+          </p>
+          <ul style="font-size:12px;color:var(--muted);padding-left:18px;">
+            <li>Uso de roles em vez de chaves de acesso long-lived.</li>
+            <li>Principals bem definidos (EC2, Lambda, ECS, EKS, etc.).</li>
+            <li>Policies revisadas pelo time de segurança antes de irem para produção.</li>
+          </ul>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;">
+            Ao criar um recurso IAM mockado, o Dashboard passa a exibir o tipo <strong>IAM</strong> com o
+            <strong>Request ID</strong> gerado, reforçando o fluxo fim a fim do IDP.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="../js/mock-resources.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>
