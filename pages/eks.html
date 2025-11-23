@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EKS · AsapCode Platform</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/menu-responsive.css" />
-
 </head>
-
 <body>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <aside class="sidebar" id="sidebar">
@@ -42,7 +39,6 @@
   </header>
   <!-- Área principal da página -->
   <main class="main">
-
     <!-- Card de conteúdo -->
     <div class="card">
       <h2>Clusters EKS</h2>
@@ -56,36 +52,28 @@
           <form action="" method="post">
             <label class="label" for="eksName">Nome do cluster</label>
             <input id="eksName" class="input" placeholder="ex: asapcode-eks-prod" required name="eksName" />
-
             <label class="label" for="eksRegion">Região</label>
             <input id="eksRegion" class="input" placeholder="ex: us-east-1" required name="eksRegion" />
-
             <label class="label" for="eksEnv">Ambiente</label>
             <select id="eksEnv" class="input">
               <option value="dev">Dev</option>
               <option value="hml">Homologação</option>
               <option value="prod">Produção</option>
             </select>
-
             <label class="label" for="eksVersion">Versão do Kubernetes</label>
             <input id="eksVersion" class="input" placeholder="ex: 1.29" required name="eksVersion" />
-
             <label class="label" for="eksNodeType">Tipo de node group</label>
             <select id="eksNodeType" class="input">
               <option value="managed">Managed node group</option>
               <option value="self-managed">Self-managed</option>
             </select>
-
             <label class="label" for="eksNodes">Quantidade de nós</label>
             <input id="eksNodes" class="input" type="number" min="1" placeholder="ex: 3" required name="eksNodes" />
-
             <label class="label" for="eksCidr">CIDR do cluster</label>
             <input id="eksCidr" class="input" placeholder="ex: 10.0.0.0/16" required name="eksCidr" />
-
             <button class="btn" type="button" style="margin-top:12px;" onclick="asapcodeCreateEks()">
               Criar Cluster AWS EKS
             </button>
-
           </form>
           <div id="eksMessage" style="margin-top:8px;font-size:12px;"></div>
         </div>
@@ -104,13 +92,11 @@
           </ul>
           <p style="font-size:12px;color:var(--muted);margin-top:8px;">
             Após clicar em <strong>Criar AWS EKS Cluster</strong>, o recurso é gravado localmente e passa a
-            aparecer
-            no Dashboard central com o tipo <strong>EKS</strong>.
+            aparecer no Dashboard central com o tipo <strong>EKS</strong>.
           </p>
         </div>
       </div>
     </div>
-
   </main>
   <script src="../js/mock-resources.js"></script>
   <script src="../js/menu.js"></script>
